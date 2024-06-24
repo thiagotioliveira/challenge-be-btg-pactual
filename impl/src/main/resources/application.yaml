@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: order-service
+  data:
+    mongodb:
+      auto-index-creation: 'true'
+      authentication-database: admin
+      username: admin
+      database: orderdb
+      password: '1234'
+      port: '27017'
+      host: localhost
