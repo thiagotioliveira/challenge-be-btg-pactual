@@ -3,22 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>dev.thiagooliveira.order</groupId>
+        <artifactId>order</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>dev.thiagooliveira.order</groupId>
     <artifactId>order-spec</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <jsr305.version>3.0.2</jsr305.version>
-        <jackson-databind-nullable.version>0.2.4</jackson-databind-nullable.version>
-        <swagger-annotations.version>1.6.9</swagger-annotations.version>
-        <swagger-annotations.v3.version>2.2.8</swagger-annotations.v3.version>
-
         <openapi-generator-maven-plugin.version>7.5.0</openapi-generator-maven-plugin.version>
         <codegen.api.package.name>dev.thiagooliveira.order.spec.api</codegen.api.package.name>
         <codegen.model.page.name>dev.thiagooliveira.order.spec.model</codegen.model.page.name>
@@ -52,12 +45,12 @@
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
-            <version>2.0.1.Final</version>
+            <version>${javax.validation-api.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
-            <version>1.3.2</version>
+            <version>${javax.annotation-api.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
