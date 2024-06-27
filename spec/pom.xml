@@ -14,7 +14,7 @@
     <properties>
         <openapi-generator-maven-plugin.version>7.5.0</openapi-generator-maven-plugin.version>
         <codegen.api.package.name>dev.thiagooliveira.order.spec.api</codegen.api.package.name>
-        <codegen.model.page.name>dev.thiagooliveira.order.spec.model</codegen.model.page.name>
+        <codegen.model.page.name>dev.thiagooliveira.order.spec.dto</codegen.model.page.name>
     </properties>
 
     <dependencies>
@@ -88,16 +88,18 @@
                                 <useTags>true</useTags>
                                 <hideGenerationTimestamp>true</hideGenerationTimestamp>
                                 <dateLibrary>java8</dateLibrary>
-                                <useOptional>true</useOptional>
+                                <useOptional>false</useOptional>
                                 <bigDecimalAsString>true</bigDecimalAsString>
                                 <apiPackage>${codegen.api.package.name}</apiPackage>
                                 <modelPackage>${codegen.model.page.name}</modelPackage>
                             </configOptions>
                             <typeMappings>
                                 <typeMapping>Timestamp=Instant</typeMapping>
+                                <typeMapping>Double=java.math.BigDecimal</typeMapping>
                             </typeMappings>
                             <importMappings>
                                 <importMapping>Instant=java.time.Instant</importMapping>
+                                <importMapping>BigDecimal=java.math.BigDecimal</importMapping>
                             </importMappings>
                         </configuration>
                     </execution>

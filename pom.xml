@@ -28,20 +28,21 @@
         <javax.annotation-api.version>1.3.2</javax.annotation-api.version>
         <org.apache.maven.plugins.version>3.0.0-M5</org.apache.maven.plugins.version>
         <org.junit.jupiter.version>5.10.2</org.junit.jupiter.version>
-        <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+        <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
         <org.mockito.version>5.11.0</org.mockito.version>
         <org.projectlombok.version>1.18.32</org.projectlombok.version>
         <swagger-annotations.version>1.6.9</swagger-annotations.version>
         <swagger-annotations.v3.version>2.2.8</swagger-annotations.v3.version>
-        <!--<spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>-->
+        <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
     </properties>
 
     <modules>
         <module>core</module>
+        <module>data-mongo</module>
+        <module>messaging-rabbitmq</module>
         <module>spec</module>
         <module>impl</module>
     </modules>
-<!--
     <build>
         <plugins>
             <plugin>
@@ -68,5 +69,4 @@
             </plugin>
         </plugins>
     </build>
-    -->
 </project>
