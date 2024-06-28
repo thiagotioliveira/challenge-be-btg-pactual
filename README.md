@@ -35,20 +35,20 @@ project
 
 ## Docker
 
-For local environments, there is a docker-compose.yml file in the `local` folder. You can bring up the necessary containers with the following command:
+For local environments, there is a `docker-compose.yml` file in the `local` folder. You can bring up the necessary containers with the following command:
 
 ```plaintext
 docker network create app-network
 docker-compose up
 ```
 
-To create image:
+To create image (Optional):
 
 ```plaintext
 docker build -t {dockerhub-user}/{image-name}:{image-tag} .
 ```
 
-To run as container:
+To run as container (Optional):
 
 ```plaintext
 docker run -p 8080:8080 --network app-network -e SPRING_DATA_MONGODB_HOST=mongodb -e SPRING_RABBITMQ_HOST=rabbitmq {dockerhub-user}/{image-name}:{image-tag}
@@ -64,6 +64,10 @@ The application has the following endpoint:
 GET /v1/customers/{customerId}/orders
 ```
 
+Example:
+```plaintext
+curl --location --request GET 'http://localhost:8080/v1/customers/1/orders?page=0&size=10'
+```
 
 ## Messaging
 To publish a message to the `order-created-queue` queue in RabbitMQ, access the RabbitMQ web interface at http://localhost:15672/#/queues/%2F/order-created-queue.
