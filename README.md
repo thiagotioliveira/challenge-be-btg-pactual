@@ -12,6 +12,12 @@
 - **spec**: OpenAPI specifications.
 - **impl**: Spring Boot application implementation.
 
+## Dependencies
+* Java 21
+* Spring Boot 3.3.1
+* Maven 3.6.3
+* Docker
+
 ## Project Structure
 
 ```plaintext
@@ -54,6 +60,24 @@ To run as container (Optional):
 docker run -p 8080:8080 --network app-network -e SPRING_DATA_MONGODB_HOST=mongodb -e SPRING_RABBITMQ_HOST=rabbitmq {dockerhub-user}/{image-name}:{image-tag}
 ```
 
+## Build and Run
+To compile and build the project, use the following command:
+
+```plaintext
+mvn clean install
+```
+To start the Spring Boot application, use the command into `impl` folder:
+
+```plaintext
+mvn spring-boot:run
+```
+
+The project uses [spotless](https://github.com/diffplug/spotless/tree/main/plugin-maven) formatting plugin. So it may be necessary to apply formatting after any file changes.
+
+```plaintext
+mvn spotless:apply
+```
+
 ## Endpoints
 - The application is configured to use the default port `8080`.
 
@@ -70,9 +94,13 @@ curl --location --request GET 'http://localhost:8080/v1/customers/1/orders?page=
 ```
 
 ## Messaging
-To publish a message to the `order-created-queue` queue in RabbitMQ, access the RabbitMQ web interface at http://localhost:15672/#/queues/%2F/order-created-queue.
+To publish a message to the `order-created-queue` queue in RabbitMQ, access the RabbitMQ web interface at http://localhost:15672.
 
 - User and pass is `guest`
+- Select `Queues and Streams`
+- Select `order-created-queue` queue
+- Select `Publish message`
+- Use the example below to publish json into `Payload` textarea
 
 Example Message:
 
@@ -94,30 +122,6 @@ Example Message:
   ]
 }
 ```
-
-## Build and Run
-To compile and build the project, use the following command:
-
-```plaintext
-mvn clean install
-```
-To start the Spring Boot application, use the command into `impl` folder:
-
-```plaintext
-mvn spring-boot:run
-```
-
-The project uses [spotless](https://github.com/diffplug/spotless/tree/main/plugin-maven) formatting plugin. So it may be necessary to apply formatting after any file changes.  
-
-```plaintext
-mvn spotless:apply
-```
-
-## Dependencies
-* Java 21
-* Spring Boot 3.3.1
-* Maven 3.6.3
-* Docker
 
 ## Contribution
 If you wish to contribute to this project, please fork the repository, create a branch for your changes, and submit a pull request. All contributions are welcome!
