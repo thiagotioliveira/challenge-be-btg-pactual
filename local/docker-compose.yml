@@ -1,3 +1,4 @@
+version: "3.7"
 services:
   mongodb:
     image: mongo
@@ -6,9 +7,18 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=1234
+    networks:
+      - app-network
 
   rabbitmq:
     image: rabbitmq:3.13-management
     ports:
       - 15672:15672
       - 5672:5672
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+    external: true
