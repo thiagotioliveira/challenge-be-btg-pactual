@@ -5,10 +5,10 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+import dev.thiagooliveira.order.core.messaging.dto.OrderCreatedEvent;
+import dev.thiagooliveira.order.core.messaging.dto.OrderItemEvent;
 import dev.thiagooliveira.order.core.models.Order;
 import dev.thiagooliveira.order.core.services.OrderService;
-import dev.thiagooliveira.order.messaging.listeners.dto.OrderCreatedEvent;
-import dev.thiagooliveira.order.messaging.listeners.dto.OrderItemEvent;
 import dev.thiagooliveira.order.messaging.mappers.OrderEventMapper;
 import java.math.BigDecimal;
 import java.util.List;

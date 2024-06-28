@@ -1,4 +1,4 @@
-package dev.thiagooliveira.order.messaging.listeners.dto;
+package dev.thiagooliveira.order.core.messaging.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;

@@ -1,9 +1,9 @@
 package dev.thiagooliveira.order.messaging.listeners;
 
-import static dev.thiagooliveira.order.messaging.config.RabbitMQConfig.ORDER_CREATED_QUEUE;
+import static dev.thiagooliveira.order.core.messaging.QueueLabel.ORDER_CREATED_QUEUE;
 
+import dev.thiagooliveira.order.core.messaging.dto.OrderCreatedEvent;
 import dev.thiagooliveira.order.core.services.OrderService;
-import dev.thiagooliveira.order.messaging.listeners.dto.OrderCreatedEvent;
 import dev.thiagooliveira.order.messaging.mappers.OrderMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
